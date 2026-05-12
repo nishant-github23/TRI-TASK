@@ -1,5 +1,5 @@
 /// <reference types="vitest" />
-import { defineConfig } from "vite";
+import { defineConfig } from "vitest/config";
 import react from "@vitejs/plugin-react";
 
 const VENDOR_CHUNKS: Record<string, string[]> = {
@@ -12,6 +12,7 @@ const VENDOR_CHUNKS: Record<string, string[]> = {
 };
 
 export default defineConfig({
+  base: "/TRI-TASK/",
   plugins: [react()],
 
   // ─── Test Configuration ────────────────────────────────────────────

@@ -111,22 +111,22 @@ const Board: React.FC = () => {
       const modifier = isMac ? e.metaKey : e.ctrlKey;
 
       // Undo: Ctrl+Z
-      if (modifier && e.key === "z" && !e.shiftKey) {
+      if (modifier && e.key.toLowerCase() === "z" && !e.shiftKey) {
         e.preventDefault();
         if (canUndo) dispatch({ type: "UNDO" });
       }
 
       // Redo: Ctrl+Shift+Z or Ctrl+Y
       if (
-        (modifier && e.shiftKey && e.key === "z") ||
-        (modifier && e.key === "y")
+        (modifier && e.shiftKey && e.key.toLowerCase() === "z") ||
+        (modifier && e.key.toLowerCase() === "y")
       ) {
         e.preventDefault();
         if (canRedo) dispatch({ type: "REDO" });
       }
 
       // New task: Alt+N
-      if (e.altKey && e.key === "n") {
+      if (e.altKey && e.key.toLowerCase() === "n") {
         e.preventDefault();
         setHasModalBeenOpened(true);
         setModalState({ isOpen: true, mode: "create", task: undefined });
