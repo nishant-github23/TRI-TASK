@@ -1,0 +1,1 @@
+import{n as e}from"./rolldown-runtime-jpDsebLB.js";import{h as t}from"./vendor-dnd-CQzwh6IQ.js";import{a as n}from"./index-DgQvJVub.js";var r=e(t(),1),i=()=>{let e=(0,r.useContext)(n);if(!e)throw Error(`useTaskContext must be used inside a <TaskProvider>`);return e};export{i as t};
